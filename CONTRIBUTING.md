@@ -11,10 +11,12 @@ the examples still reflect how it behaves, and update them if they drift.
 
 ## If you're tuning the flow
 
-- **Tone** is controlled by the "HOW YOU TALK" section. See
-  [examples/defect-interactive.md](examples/defect-interactive.md) (tight baseline) and
-  [examples/defect-interactive-warmer.md](examples/defect-interactive-warmer.md) (warmer
-  variant) for the two ends of the range.
+- **Tone** ships as three client-selectable settings (Tight / Balanced / Warm), defined in the
+  "TONE SETTING" section and applied in "HOW YOU TALK". Balanced is the default. See
+  [examples/defect-interactive.md](examples/defect-interactive.md) (Tight) and
+  [examples/defect-interactive-warmer.md](examples/defect-interactive-warmer.md) (Warm) for the
+  two ends of the range. When editing tone, keep the "constant in every tone" list intact —
+  only the per-tone phrasing should differ.
 - **Classification** is the highest-risk area — the config-vs-defect split especially. If you
   touch it, test it against the config example, which is written to catch that failure mode.
 - **The output template is a contract with the consultants** who read it. Keep the section

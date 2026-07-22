@@ -141,7 +141,13 @@ concern. The cost is length: each turn is a few seconds slower to read, and acro
 busy, annoyed client feels that. The tight baseline optimizes for "prove value fast and get
 out"; the warmer variant optimizes for "don't feel like a bot."
 
-**If you want a middle setting:** keep the warmer *opening* line (the empathy up front does the
-most work for the "not an interrogation" goal) but revert the rest to the tight cadence. That's
-a one-paragraph change to the "HOW YOU TALK" section of INTAKE-PROMPT.md — say the word and I'll
-wire whichever setting you pick into the artifact itself.
+**All three tones now ship in the artifact.** The middle setting described above is the
+built-in **Balanced** default: the warm *opening* line (the empathy up front does the most work
+for the "not an interrogation" goal) followed by the tight cadence. The client chooses by
+adding a line when they paste the prompt — `Tone: Tight`, `Tone: Balanced`, or `Tone: Warm` —
+or by saying "switch to tight" mid-conversation. See the **TONE SETTING** section at the top of
+[INTAKE-PROMPT.md](../INTAKE-PROMPT.md).
+
+So: this transcript is the **Warm** setting, and [defect-interactive.md](defect-interactive.md)
+is the **Tight** setting. Balanced sits between them — the tight transcript with the warmer
+opening line from this one.

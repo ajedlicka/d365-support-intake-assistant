@@ -41,6 +41,18 @@ already the useful one.
 That's the whole thing. If you use it often, **[SETUP.md](SETUP.md)** shows how to save the
 instructions so you don't have to paste them every time — that's optional convenience only.
 
+### Prefer a different tone?
+
+It comes in three tones, and you can pick one. By default it's **Balanced** — brief and
+efficient, with a bit of acknowledgement up front. If you'd rather, add one line when you
+paste the prompt:
+
+- `Tone: Tight` — fastest and most to-the-point.
+- `Tone: Balanced` — the default (you don't need to type anything for this).
+- `Tone: Warm` — a little more conversational and less clipped.
+
+You can also just say "switch to tight" partway through and it'll adjust.
+
 ---
 
 ## What it does
