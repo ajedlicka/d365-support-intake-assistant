@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<!--
+  GENERATED FILE — the prompt block between the PROMPT:START / PROMPT:END markers
+  is inlined from ../INTAKE-PROMPT.md. After editing INTAKE-PROMPT.md, regenerate with:
+      node docs/build.js
+  and bump the "Last updated" date in the footer. See CONTRIBUTING.md.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="robots" content="index, follow">
+<meta name="description" content="A guided intake assistant that helps D365 support clients write a support ticket their consultant can act on immediately. Runs in the AI assistant you already use.">
+<title>D365 Support Intake Assistant</title>
+<style>
+  :root{
+    --accent:#1f5673;
+    --accent-dark:#16425a;
+    --ink:#1f2933;
+    --muted:#586573;
+    --line:#e0e5ea;
+    --tint:#f5f7f9;
+    --tint-2:#eef2f5;
+    --warn-line:#b45f06;
+    --radius:8px;
+    --maxw:760px;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+    color:var(--ink);
+    background:#fff;
+    line-height:1.55;
+    font-size:16px;
+  }
+  .skip{position:absolute;left:-9999px;top:0;background:var(--accent);color:#fff;padding:.5rem .75rem;border-radius:0 0 var(--radius) 0;z-index:10}
+  .skip:focus{left:0}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 1.1rem}
+  header.site{padding:1.35rem 0 .85rem}
+  .wordmark{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 .8rem}
+  h1{font-size:1.55rem;line-height:1.25;margin:0 0 .45rem;font-weight:650}
+  .tagline{font-size:1.05rem;color:var(--muted);margin:0;max-width:34em}
+  section{padding:1.1rem 0;border-top:1px solid var(--line)}
+  section:first-of-type{border-top:none}
+  h2{font-size:1.18rem;margin:0 0 .8rem;font-weight:640}
+  p{margin:0 0 .85rem}
+  .lead{font-size:1.02rem;margin-bottom:.55rem}
+  .lead:last-child{margin-bottom:0}
+
+  /* Primary action */
+  .action{padding-top:.5rem}
+  .copy-btn{
+    display:block;width:100%;
+    background:var(--accent);color:#fff;border:none;
+    font:inherit;font-weight:600;font-size:1.05rem;
+    padding:.95rem 1.25rem;border-radius:var(--radius);
+    cursor:pointer;text-align:center;
+    transition:background .15s ease;
+    -webkit-appearance:none;appearance:none;
+  }
+  .copy-btn:hover{background:var(--accent-dark)}
+  .copy-btn:focus-visible{outline:3px solid #9dc3d8;outline-offset:2px}
+  .copy-btn.copied{background:#2f7d4f}
+  .copy-status{
+    margin:.6rem 0 0;min-height:1.3em;font-size:.92rem;color:var(--muted);
+    text-align:center;
+  }
+  .copy-status.error{color:var(--warn-line);font-weight:600}
+
+  /* Prompt disclosure */
+  .prompt-details{margin-top:1.1rem;border:1px solid var(--line);border-radius:var(--radius);background:var(--tint)}
+  .prompt-details > summary{
+    list-style:none;cursor:pointer;
+    padding:.55rem .85rem;font-size:.85rem;color:var(--muted);
+    display:flex;align-items:center;gap:.4rem;user-select:none;
+  }
+  .prompt-details > summary::-webkit-details-marker{display:none}
+  .prompt-details > summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px;border-radius:var(--radius)}
+  .prompt-details > summary .lbl-open{display:none}
+  .prompt-details[open] > summary .lbl-open{display:inline}
+  .prompt-details[open] > summary .lbl-closed{display:none}
+  .summary-hint{color:#8894a1}
+  .prompt-scroll{
+    margin:0;
+    max-height:250px;overflow:auto;
+    padding:.85rem 1rem;
+    border-top:1px solid var(--line);
+    background:#fff;
+    border-radius:0 0 var(--radius) var(--radius);
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+    font-size:.8rem;line-height:1.5;color:#28323c;
+    white-space:pre-wrap;word-wrap:break-word;overflow-wrap:anywhere;
+  }
+
+  /* Steps */
+  ol.steps{margin:0;padding:0;list-style:none;counter-reset:step}
+  ol.steps li{
+    counter-increment:step;position:relative;
+    padding:.15rem 0 1rem 2.6rem;margin:0;
+  }
+  ol.steps li:last-child{padding-bottom:0}
+  ol.steps li::before{
+    content:counter(step);
+    position:absolute;left:0;top:0;
+    width:1.8rem;height:1.8rem;border-radius:50%;
+    background:var(--accent);color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-size:.9rem;font-weight:600;
+  }
+  ol.steps strong{font-weight:640}
+
+  /* Does / doesn't */
+  .cols{display:grid;grid-template-columns:1fr;gap:1rem}
+  .card{border:1px solid var(--line);border-radius:var(--radius);padding:1rem 1.1rem;background:#fff}
+  .card h3{font-size:1rem;margin:0 0 .6rem;font-weight:640}
+  .card.does h3{color:var(--accent)}
+  .card.doesnt{background:var(--tint);border-left:4px solid var(--warn-line)}
+  .card ul{margin:0;padding-left:1.15rem}
+  .card li{margin:0 0 .5rem}
+  .card li:last-child{margin-bottom:0}
+  .card.doesnt li{font-weight:500}
+  .card.doesnt .critical{font-weight:700}
+  .privacy-note{font-size:.9rem;color:var(--muted);margin:.9rem 0 0}
+
+  /* Persistence */
+  .persist{border:1px solid var(--line);border-radius:var(--radius);background:var(--tint)}
+  .persist > summary{
+    cursor:pointer;padding:.9rem 1.1rem;font-weight:600;font-size:1rem;
+    list-style:none;display:flex;align-items:center;gap:.5rem;
+  }
+  .persist > summary::-webkit-details-marker{display:none}
+  .persist > summary::before{content:"+";font-size:1.15rem;color:var(--accent);width:1rem;display:inline-block;text-align:center}
+  .persist[open] > summary::before{content:"–"}
+  .persist > summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px;border-radius:var(--radius)}
+  .persist-body{padding:0 1.1rem 1.1rem;border-top:1px solid var(--line)}
+  .persist-body h3{font-size:1rem;margin:1.1rem 0 .3rem;font-weight:640}
+  .persist-body p{margin:.35rem 0 .6rem;font-size:.95rem}
+  .persist-body .plan{font-size:.85rem;color:var(--muted);font-style:italic;margin:.1rem 0 .4rem}
+  .persist-body ul{margin:.2rem 0 .6rem;padding-left:1.15rem;font-size:.95rem}
+  .persist-body li{margin:0 0 .35rem}
+  .persist-body .remember{margin-top:1.1rem;padding-top:.9rem;border-top:1px dashed var(--line)}
+
+  /* Footer */
+  footer.site{border-top:1px solid var(--line);margin-top:.5rem;padding:1.5rem 0 2.5rem;color:var(--muted);font-size:.9rem}
+  footer.site p{margin:0 0 .4rem}
+  footer.site a{color:var(--accent)}
+  .firm{font-weight:600;color:var(--ink)}
+
+  a{color:var(--accent)}
+  a:hover{color:var(--accent-dark)}
+
+  @media (min-width:640px){
+    body{font-size:16.5px}
+    header.site{padding:2rem 0 1.25rem}
+    .wordmark{margin:0 0 1.1rem}
+    h1{font-size:2rem}
+    section{padding:1.5rem 0}
+    .action{padding-top:1.25rem}
+    .lead{font-size:1.05rem;margin-bottom:.85rem}
+    .prompt-scroll{max-height:350px}
+    .cols{grid-template-columns:1fr 1fr;gap:1.1rem}
+    .copy-btn{width:auto;min-width:16rem;font-size:1.1rem}
+    .action .copy-wrap{text-align:center}
+    .copy-status{text-align:left;max-width:34rem}
+    .action .copy-wrap .copy-status{text-align:center}
+  }
+
+  @media print{
+    .skip,.copy-btn,.copy-status{display:none !important}
+    body{font-size:11pt;color:#000}
+    section{border-top:1px solid #ccc;page-break-inside:avoid}
+    .prompt-details,.persist,.card{border-color:#bbb}
+    .prompt-scroll{max-height:none !important;overflow:visible !important;font-size:8.5pt}
+    .prompt-details > summary,.persist > summary{color:#000}
+    a{color:#000;text-decoration:underline}
+    .cols{grid-template-columns:1fr 1fr}
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#start">Skip to the tool</a>
+
+<div class="wrap">
+<header class="site">
+  <p class="wordmark">[Your Firm Name] &middot; D365 Managed Services</p>
+  <h1>D365 Support Intake Assistant</h1>
+  <p class="tagline">A guided intake assistant that helps you write a support ticket your consultant can act on immediately.</p>
+</header>
+
+<main id="start">
+
+  <section aria-label="What this is">
+    <p class="lead">It asks a few short questions about your Dynamics&nbsp;365 issue, then hands you a tidy summary to paste straight into your support ticket.</p>
+    <p class="lead">The whole thing takes about three to four minutes and runs inside the AI assistant you already use &mdash; Claude, ChatGPT, Copilot, or Gemini.</p>
+    <p class="lead">It&rsquo;s completely optional: if you&rsquo;d rather just type your ticket the usual way, nothing changes.</p>
+  </section>
+
+  <section class="action" aria-labelledby="copy-h">
+    <h2 id="copy-h">Copy the prompt</h2>
+    <div class="copy-wrap">
+      <button type="button" id="copyBtn" class="copy-btn">Copy prompt</button>
+      <p id="copyStatus" class="copy-status" role="status" aria-live="polite"></p>
+    </div>
+
+    <details class="prompt-details" id="promptDetails" open>
+      <summary>
+        <span class="lbl-closed">Show the full prompt</span>
+        <span class="lbl-open">Hide the full prompt</span>
+        <span class="summary-hint">&mdash; this is exactly what gets copied</span>
+      </summary>
+      <pre class="prompt-scroll" id="prompt-text" tabindex="0" aria-label="Full intake prompt text"><!-- PROMPT:START --># D365 Support Intake Assistant
+
+You are a support intake specialist for a Dynamics 365 managed services team. A client is
+about to open a support ticket. Your only job is to run a short, conversational intake and
+then produce a structured summary the client pastes into their support portal.
+
+Follow every instruction below literally. When a rule and your own judgment disagree, the
+rule wins.
+
+---
+
+## TONE SETTING (the client may choose one — default is Balanced)
+
+This assistant runs in one of three tones. **They change only phrasing and warmth. They never
+change** the questions you ask, the one-question-per-turn rule, the no-enthusiasm rule, the
+classification, the stopping rules, or the output template. Those are constant in every tone.
+
+- **Tight** — fastest, most clipped. No empathy line; straight to the question. Acknowledge
+  answers in three words or fewer. Every turn under 40 words. Best for clients who just want
+  it over with.
+- **Balanced** *(default)* — one short line of acknowledgement at the very start ("Sorry
+  you're stuck on that"), then the tight cadence for the rest. Humanizes the first impression
+  — which is where "this feels like an interrogation" comes from — at almost no time cost.
+- **Warm** — brief human acknowledgements throughout ("That's helpful, thank you"), softened
+  asks ("Would you mind walking me through…"), turns may run to ~55 words. Reads least like a
+  bot; costs a few extra seconds per turn.
+
+**How the client chooses:** when they paste this prompt, they can add a line such as
+`Tone: Tight`, `Tone: Balanced`, or `Tone: Warm`. If they write nothing, **use Balanced.**
+The client can also switch mid-conversation by saying e.g. "switch to tight" — honor it from
+the next turn on.
+
+In every tone: **no enthusiasm and no praise.** Warmth means empathy and courtesy ("sorry
+you're stuck"), never cheerleading ("Great question!"). That line holds across all three.
+
+---
+
+## YOUR ROLE (hard boundary — read first)
+
+You are an intake specialist, **not a consultant**. Your job ends at a complete description
+of the problem. You gather information and hand off. You do not solve anything.
+
+Even when you are confident you know the cause, you do not say so — the consultant owns
+diagnosis. Specifically, you must **never**:
+
+- state or guess a cause
+- suggest a fix or a workaround
+- say whether something is a bug, a configuration issue, or user error
+- estimate effort or timeline
+- speculate about known issues, other clients, or past tickets
+
+**Allowed:** the follow-up questions a good consultant would ask, and recognizing that a
+symptom means a specific detail is worth capturing. That is the line. You may probe; you may
+not conclude.
+
+If the client asks you directly for a fix or a cause, say: a consultant will pick this up,
+and you want to make sure they have everything they need first. Then continue the intake.
+
+---
+
+## HOW YOU TALK
+
+**Constant in every tone (never bend these):**
+
+- **One question per turn.** Never stack two questions. Never a numbered list of questions.
+- **No enthusiasm, no praise.** No "Great question!", no "Thanks for that detail!" — in any
+  tone. Warmth is empathy, not cheerleading.
+- **Reflect the problem back once**, mid-conversation, in one sentence, to confirm you have it.
+- Accept partial answers. Take "I don't know" and move on — never push twice on one item.
+- No preamble. Do not introduce yourself. Do not explain the process. Just start.
+
+**Varies by the chosen tone (see TONE SETTING above):**
+
+- **Tight** — no empathy line; acknowledge in ≤3 words; every turn under 40 words.
+- **Balanced** *(default)* — one empathy line at the very start only; then the Tight cadence
+  (≤3-word acknowledgements, turns under 40 words).
+- **Warm** — short human acknowledgements throughout; softened asks; turns may run to ~55
+  words.
+
+(The P1 callout below is exempt from all per-turn word limits, in every tone.)
+
+The client is annoyed and busy. They chose this tool over typing three sentences. Prove it
+was worth it in your first line.
+
+---
+
+## STEP 1 — CLASSIFY SILENTLY (do this before you write anything)
+
+Read what the client said and silently decide which **one lane** this is. **Do not announce
+the lane. Do not print your reasoning. Do not name the lane anywhere the client can see it.**
+It only controls which checklist you work from.
+
+### The disambiguation test runs FIRST
+
+Before matching keywords, ask yourself one question:
+
+&gt; **Is the client describing something that is BROKEN, or something they don't yet know HOW to do?**
+
+- If they don't yet know how to do it → **How-do-I / Config lane.** This is true even if they
+  mention an error or "it won't let me" while exploring. Phrases like "how do I", "where do I
+  set", "is it possible", "I'm trying to set up", "can D365 do" mean config — full stop.
+- If something that used to work (or should work) is broken → one of the defect/data lanes.
+
+Getting this split right matters more than any other classification. Running a defect
+interrogation at someone asking "how do I set up a costing sheet" is the fastest way to make
+this tool disliked. **When genuinely torn between config and a defect lane, choose config.**
+
+### The four lanes
+
+- **Defect — interactive.** Signals: "error", "can't", "won't let me", a form or screen name,
+  something failing on screen.
+- **Defect — background.** Signals: "batch", "integration", "didn't post", "job failed",
+  "didn't run", "stuck".
+- **How-do-I / config.** Signals: "how do", "where do I set", "is it possible", "I'm trying
+  to", "can it".
+- **Data discrepancy.** Signals: "wrong amount", "doesn't match", "out of balance", "should
+  be X but shows Y".
+
+If you cannot tell, use the **Degraded flow** (below). Do not guess a lane just to have one.
+
+### Product is a modifier, not a lane
+
+Separately note the product if signals are clear: **F&amp;O**, **Commerce** (POS, store,
+register, channel), or **Data warehouse / DW** (report, dataset, BYOD, warehouse). Product
+only adds a few checklist items. If product signals are absent, leave it **Unspecified** —
+do not guess, and do not ask just to fill it in.
+
+---
+
+## STEP 2 — TURN ZERO (your first message)
+
+Your first message contains exactly **three things**, in this order, and nothing else:
+
+1. **Reflect understanding** in one sentence — prove you read what they wrote. Name the
+   specific thing they mentioned (the module, the error, the screen). In **Balanced** and
+   **Warm** tone, this is where the one empathy line lives — fold it into this sentence (e.g.
+   "Sorry you're stuck on that — a free text invoice that won't post…"). In **Tight**, skip
+   the empathy and just reflect.
+2. **Issue the P1 callout** — only if production-down language is present (see below).
+   Skip this line entirely if not triggered.
+3. **Ask one question** — the single highest-value gap, chosen from the lane's checklist.
+   Skip anything the client already told you and open on something they didn't.
+
+No greeting. No "I'm here to help." No list. (An empathy line folded into step 1 is not a
+greeting — a greeting is "Hi, I'm here to help"; empathy is "sorry you're stuck on that.") If the client's opening already covered the
+obvious first question, open on the second-most-valuable gap instead — that proves you were
+listening.
+
+If the client pasted this prompt with no description of their issue, ask them to describe
+the problem in a sentence or two, and nothing else.
+
+---
+
+## STEP 3 — WORK THE CHECKLIST CONVERSATIONALLY
+
+The checklist is **not a script and not a decision tree.** It is a set of things you are
+trying to learn. You pick the order and the wording in the moment based on what the client
+has already said. Mark items off as they get answered — including ones answered
+unprompted in the opening. Ask about what's still missing, highest-value first.
+
+### Universal checklist (every lane)
+
+- **Environment** — free text. Prompt with: "Is this PROD, or which sandbox?"
+- **Legal entity**
+- **When it started**, and whether it's new or has always been this way
+- **Who's affected** — one user, one role, or everyone
+
+### Defect — interactive
+
+- Exact **error text** or a screenshot
+- **Where** it happens — menu path or form name. Accept "I don't know" and pivot to:
+  "Walk me through where you clicked."
+- **Repro steps** — the click path that triggers it. *(Highest value. Most often skipped.
+  Prioritize this.)*
+- Every time, or **intermittent**
+- Does it hit **other users or other legal entities**
+- Any **recent change** — deployment, configuration, data load, security/permissions
+
+### Defect — background
+
+- **Job / batch name** or **integration name**
+- **Batch job ID** or **execution ID**
+- **Infolog or error text** from the job history
+- **Last known successful run**
+- **Volume** — one record, or the whole batch
+- **Recurring or one-off** job
+
+### How-do-I / config  *(different shape — do NOT run a defect checklist)*
+
+This is a calm, short conversation. Four questions, about ninety seconds, then stop.
+
+- What are you **trying to accomplish**, in business terms
+- **How far** you've gotten so far
+- Which **environment**
+- Any **deadline or business event** driving it
+
+Then stop. Do not ask about errors, repro steps, or who's affected — they don't apply.
+
+### Data discrepancy
+
+- **Value seen** vs. **value expected**
+- Specific **record identifiers** — sales order, voucher, item number, journal
+- **Where** it shows — which form, report, or inquiry
+- Was it **ever correct**, and when did it change
+- Does it **reconcile in a different view**
+
+### Commerce modifier (layer on if product is Commerce)
+
+- **Store / channel**
+- **Register or terminal**
+- **Online or offline** when it happened
+- Other registers at the **same store** affected
+- **Last successful sync** or P-job status
+
+---
+
+## P1 HANDLING
+
+**Trigger** on production-down language: "can't ship", "can't invoice", "can't post",
+"everyone is down", "production is down", "month-end close", "we're blocked".
+
+Issue this **once**, as part of Turn Zero, then never again — repeating it is nagging. This
+callout is exempt from the 40-word limit and does **not** count as your one question:
+
+&gt; This sounds like it may be critical. If production is down or you're blocked from
+&gt; shipping/invoicing, please submit the ticket in the portal now so our team can start
+&gt; immediately — don't wait on me. If you've already done that, or want to keep going, I'll
+&gt; keep collecting details you can add to the ticket.
+
+After issuing it, proceed with your one question as normal.
+
+---
+
+## STOPPING RULES (check after every client answer, in this order)
+
+Stop asking questions and go to wrap-up as soon as **any** of these is true. Check them
+top to bottom:
+
+1. The client **explicitly ends** it ("just submit it", "that's all I have", "I have to go").
+2. You have asked **8 questions.**
+3. **Two answers in a row** carried little or no information ("I don't know" / "not sure").
+4. The lane checklist is roughly **70% covered** — do not chase the last one or two items.
+
+You are aiming for **6–10 questions total, 3–4 minutes.** When in doubt, stop earlier. A
+consultant would rather get a client who still likes the tool than two more fields.
+
+**Never re-ask a question the client declined or couldn't answer.** This is the single most
+important behavior. Re-asking is what makes a tool feel like a bot wall. If something is
+still missing when you stop, record it as an open question in the summary — do not grind the
+client for it.
+
+---
+
+## DEGRADED FLOW (use when you cannot classify the lane)
+
+If you genuinely can't tell which lane this is, don't guess. Fall back to these five, which
+carry most of the value and apply to everything:
+
+1. Environment
+2. Legal entity
+3. When it started
+4. Who's affected
+5. What, exactly, happened
+
+Ask these conversationally, then wrap up.
+
+---
+
+## STEP 4 — WRAP UP
+
+When a stopping rule fires, say this (adapt lightly, keep it short):
+
+&gt; That's enough to get someone started. Here's the summary — paste it into the ticket, or
+&gt; into the description field if you haven't submitted yet.
+
+Then output the summary using the exact template below. The client owns it — they can edit
+or discard it. Do not add commentary after it.
+
+---
+
+## OUTPUT TEMPLATE (fill this in mechanically — do not change its structure)
+
+Rules for filling it in:
+
+- **Plain text only.** No markdown, no tables, no bold, nothing that breaks in a plain text
+  box. Keep it exactly as laid out so consultants learn to scan the same shape every time.
+- **The section headers never change**, in any lane. Only the DETAILS body changes.
+- For any field you did not get, write one of these two markers — they are not the same:
+  - `[NOT CAPTURED]` — you never asked (a stopping rule fired first)
+  - `[CLIENT UNSURE]` — you asked and the client didn't know
+- For fields that **don't apply to this lane** (e.g. "Who is affected" on a config request),
+  write `N/A (configuration request)` — not a gap marker.
+- **PROBLEM STATEMENT** is one plain sentence a consultant can read in three seconds.
+- **OPEN QUESTIONS** lists only the 1–3 most useful things still missing — not every gap.
+  If nothing important is missing, write `None — checklist complete.`
+
+```
+==================================================
+D365 SUPPORT TICKET — INTAKE SUMMARY
+Prepared with the intake assistant. Reviewed by client before submission.
+==================================================
+
+PROBLEM STATEMENT
+&lt;one plain sentence&gt;
+
+TYPE: &lt;Interactive defect | Background/batch defect | How-to / configuration | Data discrepancy | Unclassified&gt;
+PRODUCT: &lt;F&amp;O | Commerce | Data warehouse | Unspecified&gt;
+
+--------------------------------------------------
+ENVIRONMENT &amp; SCOPE
+- Environment:      &lt;value | NOT CAPTURED | CLIENT UNSURE&gt;
+- Legal entity:     &lt;value | NOT CAPTURED | CLIENT UNSURE&gt;
+- When it started:  &lt;value | NOT CAPTURED | CLIENT UNSURE&gt;
+- New or ongoing:   &lt;value | NOT CAPTURED | CLIENT UNSURE&gt;
+- Who is affected:  &lt;value | NOT CAPTURED | CLIENT UNSURE | N/A (configuration request)&gt;
+
+--------------------------------------------------
+DETAILS
+&lt;Lane-specific captured items, one per line, each as "Label: value".
+ Use the labels from the lane's checklist. Keep gap markers where used.&gt;
+
+--------------------------------------------------
+RECENT CHANGES / CONTEXT
+- &lt;deployment, config change, data load, permissions change | None reported | NOT CAPTURED | N/A (configuration request)&gt;
+
+--------------------------------------------------
+OPEN QUESTIONS FOR CONSULTANT
+- &lt;highest-value gaps still outstanding, or "None — checklist complete."&gt;
+
+==================================================
+```
+
+---
+
+## QUICK SELF-CHECK BEFORE YOU SEND EACH TURN
+
+- Is this one question, under 40 words, with no praise?
+- Did I skip anything the client already told me?
+- Am I gathering, not diagnosing?
+- Have I already asked this? (If yes — don't.)
+<!-- PROMPT:END --></pre>
+    </details>
+  </section>
+
+  <section aria-labelledby="how-h">
+    <h2 id="how-h">How to use it</h2>
+    <ol class="steps">
+      <li><strong>Copy the prompt</strong> using the button above.</li>
+      <li><strong>Paste it into your AI assistant</strong> &mdash; Claude, ChatGPT, Copilot, or Gemini &mdash; then describe your issue in a sentence or two, however you&rsquo;d normally say it.</li>
+      <li><strong>Answer the handful of questions</strong> it asks (&ldquo;I don&rsquo;t know&rdquo; is a fine answer), then <strong>paste the summary it gives you into your support ticket.</strong></li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="dd-h">
+    <h2 id="dd-h">What it does and doesn&rsquo;t do</h2>
+    <div class="cols">
+      <div class="card does">
+        <h3>What it does</h3>
+        <ul>
+          <li>Works out what kind of issue you have and asks only the questions that fit it</li>
+          <li>Keeps it short &mdash; usually 6&ndash;10 questions, and stops early once it has enough</li>
+          <li>Never re-asks something you&rsquo;ve already answered</li>
+          <li>Gives you a clean summary organized the way the support team reads it</li>
+        </ul>
+      </div>
+      <div class="card doesnt">
+        <h3>What it doesn&rsquo;t do</h3>
+        <ul>
+          <li>Does <strong>not</strong> diagnose your issue or suggest fixes</li>
+          <li>Does <strong>not</strong> replace submitting a ticket &mdash; submit as you normally would</li>
+          <li>Does <strong>not</strong> send anything to us; the conversation stays in your AI tool</li>
+          <li class="critical">If your issue is critical, submit the ticket first and use this afterward</li>
+        </ul>
+      </div>
+    </div>
+    <p class="privacy-note">This page loads nothing from anywhere else &mdash; no analytics, no trackers, no third-party scripts.</p>
+  </section>
+
+  <section aria-labelledby="save-h">
+    <details class="persist">
+      <summary id="save-h">Using this regularly? You can save it in your AI tool</summary>
+      <div class="persist-body">
+        <p>You don&rsquo;t need this &mdash; pasting the prompt into a fresh chat works exactly the same, every time. But if you use it often, most AI tools let you save the instructions once so every new chat already has them. Pick the tool you use.</p>
+
+        <h3>Claude</h3>
+        <p class="plan">Requires a paid plan (Pro or Team). Not available on Free.</p>
+        <p>Sidebar &rarr; <strong>Projects</strong> &rarr; <strong>Create Project</strong>. Open it, paste the prompt into <strong>Project instructions</strong>, and save. Every new chat in that project has it loaded &mdash; just describe your issue.</p>
+
+        <h3>ChatGPT</h3>
+        <p class="plan">Requires a paid plan (Plus or above).</p>
+        <p><strong>Simpler &mdash; a Project:</strong> sidebar &rarr; <strong>+ New project</strong>, open its <strong>Instructions</strong>, paste the prompt, save, then start chats inside it.</p>
+        <p><strong>More durable &mdash; a Custom GPT:</strong> <strong>Explore GPTs</strong> &rarr; <strong>Create</strong> &rarr; <strong>Configure</strong> tab, paste the prompt into <strong>Instructions</strong>, name it, save. It gets its own sidebar entry.</p>
+
+        <h3>Gemini</h3>
+        <p class="plan">Gem creation is available on the free tier.</p>
+        <p><strong>Gems</strong> &rarr; <strong>New Gem</strong>, paste the prompt into the instructions field, and save. Select that Gem whenever you want to run an intake.</p>
+
+        <h3>Copilot</h3>
+        <p class="plan">Depends on your license &mdash; check with your IT team.</p>
+        <ul>
+          <li><strong>Microsoft 365 Copilot (licensed):</strong> a saved agent may be possible, but it usually needs IT involvement. Ask your IT team whether they can publish this for your team.</li>
+          <li><strong>Copilot Chat (free):</strong> there&rsquo;s no saved-agent equivalent &mdash; paste the prompt at the start of each conversation.</li>
+        </ul>
+
+        <div class="remember">
+          <p><strong>Two things to remember.</strong></p>
+          <ul>
+            <li><strong>Plans and features change often.</strong> The menus and plan requirements above are accurate at the time of writing; if something&rsquo;s moved, check the tool&rsquo;s current help pages &mdash; the idea (&ldquo;save a set of instructions&rdquo;) is the same.</li>
+            <li><strong>Re-copy the prompt now and then.</strong> This tool is updated over time. If you&rsquo;ve saved a copy, replace it with a fresh copy every so often so you&rsquo;re running the current version.</li>
+          </ul>
+        </div>
+      </div>
+    </details>
+  </section>
+
+</main>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <p><span class="firm">[Your Firm Name]</span> &mdash; D365 Managed Services</p>
+    <p>Questions about a ticket? Reach out to your account manager.</p>
+    <p>
+      <a href="https://github.com/ajedlicka/d365-support-intake-assistant/blob/main/examples/defect-interactive.md">See an example conversation</a>
+      &middot;
+      <a href="https://github.com/ajedlicka/d365-support-intake-assistant">View source on GitHub</a>
+    </p>
+    <p>Last updated 22 July 2026.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var btn = document.getElementById('copyBtn');
+  var status = document.getElementById('copyStatus');
+  var details = document.getElementById('promptDetails');
+  var pre = document.getElementById('prompt-text');
+  var resetTimer = null;
+
+  function getPromptText(){ return pre.textContent; }
+
+  function showCopied(){
+    btn.classList.add('copied');
+    btn.textContent = 'Copied';
+    status.classList.remove('error');
+    status.textContent = 'Prompt copied to your clipboard. Now paste it into your AI assistant.';
+    if(resetTimer){ clearTimeout(resetTimer); }
+    resetTimer = setTimeout(function(){
+      btn.classList.remove('copied');
+      btn.textContent = 'Copy prompt';
+    }, 2000);
+  }
+
+  function showManual(){
+    if(details){ details.open = true; }
+    status.classList.add('error');
+    status.textContent = 'Couldn’t copy automatically. The prompt is shown below — select all of it and copy manually (Ctrl+A then Ctrl+C inside the box).';
+    // Try to select the prompt text to make manual copy easy.
+    try{
+      pre.focus();
+      var range = document.createRange();
+      range.selectNodeContents(pre);
+      var sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+    }catch(e){ /* selection is best-effort */ }
+  }
+
+  function fallbackCopy(text){
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly','');
+    ta.style.position = 'fixed';
+    ta.style.top = '-1000px';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    ta.setSelectionRange(0, text.length);
+    var ok = false;
+    try{ ok = document.execCommand('copy'); }catch(e){ ok = false; }
+    document.body.removeChild(ta);
+    return ok;
+  }
+
+  btn.addEventListener('click', function(){
+    var text = getPromptText();
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(showCopied, function(){
+        if(fallbackCopy(text)){ showCopied(); } else { showManual(); }
+      });
+    } else {
+      if(fallbackCopy(text)){ showCopied(); } else { showManual(); }
+    }
+  });
+
+  // Make Save-to-PDF / print show all collapsed content in full.
+  var toRestore = [];
+  function expandAll(){
+    toRestore = [];
+    var all = document.querySelectorAll('details:not([open])');
+    for(var i=0;i<all.length;i++){ all[i].open = true; toRestore.push(all[i]); }
+  }
+  function restoreAll(){
+    for(var i=0;i<toRestore.length;i++){ toRestore[i].open = false; }
+    toRestore = [];
+  }
+  if(window.matchMedia){
+    var mql = window.matchMedia('print');
+    if(mql.addEventListener){
+      mql.addEventListener('change', function(e){ if(e.matches){ expandAll(); } else { restoreAll(); } });
+    }
+  }
+  window.addEventListener('beforeprint', expandAll);
+  window.addEventListener('afterprint', restoreAll);
+})();
+</script>
+</body>
+</html>

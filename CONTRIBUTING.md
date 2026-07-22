@@ -29,6 +29,29 @@ different AI assistants, run each lane's scenario, and confirm the summary still
 cleanly and the stopping rules still fire. The `examples/` transcripts are your reference for
 "correct."
 
+## The website (`docs/` → GitHub Pages)
+
+`docs/index.html` is the client-facing front door, served by GitHub Pages from the `docs/`
+folder. It is **self-contained** — inline CSS/JS, no external requests, no analytics — so it
+also works if a client saves it and opens it offline.
+
+The full prompt is **inlined** into that page so the "Copy prompt" button copies it exactly.
+That inline copy is generated, not hand-edited:
+
+> **When `INTAKE-PROMPT.md` changes, regenerate the page:**
+> ```
+> node docs/build.js
+> ```
+> Then bump the **"Last updated"** date in the footer of `docs/index.html`.
+
+`docs/build.js` reads `INTAKE-PROMPT.md`, HTML-escapes it, and rewrites everything between the
+`<!-- PROMPT:START -->` / `<!-- PROMPT:END -->` markers. It has zero dependencies (Node only).
+`docs/.nojekyll` tells GitHub Pages to serve the folder as-is without Jekyll processing.
+
+Placeholders to replace before sharing the page widely: `[Your Firm Name]` (header wordmark and
+footer). The contact path is intentionally "reach out to your account manager" — swap in a real
+support address only if you want one on a public page.
+
 ## Scope
 
 Phase 1 is deliberately prompt-only — no hosting, no integrations, no per-client config. Keep
