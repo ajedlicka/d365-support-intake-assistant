@@ -48,9 +48,9 @@ That inline copy is generated, not hand-edited:
 `<!-- PROMPT:START -->` / `<!-- PROMPT:END -->` markers. It has zero dependencies (Node only).
 `docs/.nojekyll` tells GitHub Pages to serve the folder as-is without Jekyll processing.
 
-Placeholders to replace before sharing the page widely: `[Your Firm Name]` (header wordmark and
-footer). The contact path is intentionally "reach out to your account manager" — swap in a real
-support address only if you want one on a public page.
+The page is branded simply as "D365 Managed Services" (header wordmark and footer). The contact
+path is intentionally "reach out to your account manager" — swap in a real support address only
+if you want one on a public page.
 
 ## Scope
 
